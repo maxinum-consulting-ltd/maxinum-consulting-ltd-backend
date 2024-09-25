@@ -8,7 +8,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-
 AppDataSource.initialize()
   .then(() => {
     console.log("Database connection established");
@@ -17,7 +16,7 @@ AppDataSource.initialize()
 
     app.get("/", async (req, res) => {
       const transactions = await transactionRepository.find();
-      res.json(transactions);
+      res.json([...transactions.reverse()]);
     });
 
     app.post("/", async (req, res) => {
