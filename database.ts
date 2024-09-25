@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm";
-import { Transaction } from "./src/entity/Transaction"; // Импортируйте вашу сущность Transaction
+import { Transaction } from "./src/entity/Transaction";
 
 const AppDataSource = new DataSource({
   type: "postgres",
